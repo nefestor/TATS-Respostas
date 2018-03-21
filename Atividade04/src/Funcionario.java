@@ -79,4 +79,5 @@ class Funcionario {
         return 0;
     }
     
+    
 }
