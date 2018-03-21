@@ -66,6 +66,12 @@ class Funcionario {
             else
                 return salario * 0.85;
         }
+        if(cargo == "GERENTE") {
+            if(salario >= 2000)
+                return salario * 0.70;
+            else
+                return salario * 0.80;
+        }
         return 0;
     }
     
