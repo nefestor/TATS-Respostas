@@ -65,4 +65,10 @@ public class SalarioTeste {
         Funcionario asa = new Funcionario("Tiago", "tiago@email.com", 3000.0, "");
         asa.calcSalario();
     }
+    @Test(expected = IllegalArgumentException.class)
+    public void emailVazio() {
+        Funcionario asa = new Funcionario("Tiago", "", 3000.0, "TESTADOR");
+        asa.calcSalario();
+    }
+    
 }
