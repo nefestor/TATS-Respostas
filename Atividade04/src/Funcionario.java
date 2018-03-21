@@ -48,6 +48,9 @@ class Funcionario {
     
     
     double calcSalario() {
+        if(salario == 0)
+            throw new IllegalArgumentException("Você não pode trabalhar de graça.");
+        
         if(cargo == "DESENVOLVEDOR") {
             if(salario >= 3000)    
                 return salario * 0.8;
