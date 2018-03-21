@@ -28,10 +28,15 @@ public class SalarioTeste {
     }
 
     @Test
-    public void salario() {
+    public void salarioDev() {
         Funcionario asa = new Funcionario("Tiago", "tiago@email.com", 5000.0, "DESENVOLVEDOR");
         assertEquals(4000.0, asa.calcSalario(), 0.00001);
         
+    }
+    @Test
+        public void salarioDba() {
+        Funcionario asa = new Funcionario("Tiago", "tiago@email.com", 5000.0, "DBA");
+        assertEquals(4250.0, asa.calcSalario(), 0.00001);   
     }
     
 }
