@@ -50,6 +50,10 @@ public class SalarioTeste {
         Funcionario asa = new Funcionario("Tiago", "tiago@email.com", 5000.0, "GERENTE");
         assertEquals(3500.0, asa.calcSalario(), 0.00001);
     }
-
+    @Test(expected = IllegalArgumentException.class)
+    public void salarioVazio() {
+        Funcionario asa = new Funcionario("Tiago", "tiago@email.com", 0.0, "GERENTE");
+        asa.calcSalario();
+    }
 
 }
