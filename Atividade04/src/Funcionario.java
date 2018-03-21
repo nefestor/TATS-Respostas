@@ -50,12 +50,15 @@ class Funcionario {
     double calcSalario() {
         if(cargo == "DESENVOLVEDOR") {
             if(salario >= 3000)    
-                return salario = salario * 0.8;
+                return salario * 0.8;
             else
-                return salario = salario * 0.9;
+                return salario * 0.9;
         }
         if(cargo == "DBA") {
-            return salario = salario * 0.85;
+            if(salario >= 2000)
+                return salario * 0.75;
+            else
+                return salario * 0.85;
         }
         return 0;
     }
