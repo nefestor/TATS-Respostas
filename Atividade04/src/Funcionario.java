@@ -54,7 +54,8 @@ class Funcionario {
             throw new IllegalArgumentException("Você não pode pagar para trabalhar");
         if(cargo == "")
             throw new IllegalArgumentException("Você não pode ficar sem cargo na empresa");
-
+        if(email == "")
+            throw new IllegalArgumentException("Você precisa de um e-mail para trabalhar");
         if(cargo == "DESENVOLVEDOR") {
             if(salario >= 3000)    
                 return salario * 0.8;
