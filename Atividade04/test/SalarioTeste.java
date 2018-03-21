@@ -45,5 +45,11 @@ public class SalarioTeste {
         Funcionario asa = new Funcionario("Tiago", "tiago@email.com", 5000.0, "TESTADOR");
         assertEquals(3750.0, asa.calcSalario(), 0.00001);
     }
+    @Test
+    public void salarioGerente() {
+        Funcionario asa = new Funcionario("Tiago", "tiago@email.com", 5000.0, "GERENTE");
+        assertEquals(3500.0, asa.calcSalario(), 0.00001);
+    }
+
 
 }
