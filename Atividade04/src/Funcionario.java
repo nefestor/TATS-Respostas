@@ -51,6 +51,9 @@ class Funcionario {
         if(cargo == "DESENVOLVEDOR") {
             return salario = salario * 0.8;
         }
+        if(cargo == "DBA") {
+            return salario = salario * 0.85;
+        }
         return 0;
     }
     
