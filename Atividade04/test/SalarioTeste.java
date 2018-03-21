@@ -29,46 +29,47 @@ public class SalarioTeste {
 
     @Test
     public void salarioDev() {
-        Funcionario asa = new Funcionario("Tiago", "tiago@email.com", 5000.0, "DESENVOLVEDOR");
-        assertEquals(4000.0, asa.calcSalario(), 0.00001);
+        CalcSalario calculo = new CalcSalario(new Funcionario("Tiago", "tiago@email.com", 5000.0, "DESENVOLVEDOR"));
+        assertEquals(4000.0, calculo.calcSalario(), 0.00001);
 
     }
 
     @Test
     public void salarioDba() {
-        Funcionario asa = new Funcionario("Tiago", "tiago@email.com", 5000.0, "DBA");
-        assertEquals(3750.0, asa.calcSalario(), 0.00001);
+        CalcSalario calculo = new CalcSalario(new Funcionario("Tiago", "tiago@email.com", 5000.0, "DBA"));
+        assertEquals(3750.0, calculo.calcSalario(), 0.00001);
+        
     }
 
     @Test
     public void salarioTestador() {
-        Funcionario asa = new Funcionario("Tiago", "tiago@email.com", 5000.0, "TESTADOR");
-        assertEquals(3750.0, asa.calcSalario(), 0.00001);
+        CalcSalario calculo = new CalcSalario(new Funcionario("Tiago", "tiago@email.com", 5000.0, "TESTADOR"));
+        assertEquals(3750.0, calculo.calcSalario(), 0.00001);
     }
     @Test
     public void salarioGerente() {
-        Funcionario asa = new Funcionario("Tiago", "tiago@email.com", 5000.0, "GERENTE");
-        assertEquals(3500.0, asa.calcSalario(), 0.00001);
+        CalcSalario calculo = new CalcSalario(new Funcionario("Tiago", "tiago@email.com", 5000.0, "GERENTE"));
+        assertEquals(3500.0, calculo.calcSalario(), 0.00001);
     }
     @Test(expected = IllegalArgumentException.class)
     public void salarioVazio() {
-        Funcionario asa = new Funcionario("Tiago", "tiago@email.com", 0.0, "GERENTE");
-        asa.calcSalario();
+        CalcSalario calculo = new CalcSalario(new Funcionario("Tiago", "tiago@email.com", 0.0, "GERENTE"));
+        calculo.calcSalario();
     }
     @Test(expected = IllegalArgumentException.class)
     public void salarioNegativo() {
-        Funcionario asa = new Funcionario("Tiago", "tiago@email.com", -10.0, "GERENTE");
-        asa.calcSalario();
+        CalcSalario calculo = new CalcSalario(new Funcionario("Tiago", "tiago@email.com", -10.0, "GERENTE"));
+        calculo.calcSalario();
     }
     @Test(expected = IllegalArgumentException.class)
     public void cargoVazio() {
-        Funcionario asa = new Funcionario("Tiago", "tiago@email.com", 3000.0, "");
-        asa.calcSalario();
+        CalcSalario calculo = new CalcSalario(new Funcionario("Tiago", "tiago@email.com", 3000.0, ""));
+        calculo.calcSalario();
     }
     @Test(expected = IllegalArgumentException.class)
     public void emailVazio() {
-        Funcionario asa = new Funcionario("Tiago", "", 3000.0, "TESTADOR");
-        asa.calcSalario();
+        CalcSalario calculo = new CalcSalario(new Funcionario("Tiago", "", 3000.0, "TESTADOR"));
+        calculo.calcSalario();
     }
     
 }
