@@ -29,9 +29,8 @@ public class SalarioTeste {
 
     @Test
     public void salario() {
-        Funcionario asa = new Funcionario('Tiago', 'tiago@email.com', 5000.0, 'DESENVOLVEDOR');
+        Funcionario asa = new Funcionario("Tiago", "tiago@email.com", 5000.0, "DESENVOLVEDOR");
         assertEquals(4000.0, asa.calcSalario(), 0.00001);
-        
         
     }
     
