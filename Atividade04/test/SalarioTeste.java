@@ -55,5 +55,9 @@ public class SalarioTeste {
         Funcionario asa = new Funcionario("Tiago", "tiago@email.com", 0.0, "GERENTE");
         asa.calcSalario();
     }
-
+    @Test(expected = IllegalArgumentException.class)
+    public void salarioNegativo() {
+        Funcionario asa = new Funcionario("Tiago", "tiago@email.com", -10.0, "GERENTE");
+        asa.calcSalario();
+    }
 }
