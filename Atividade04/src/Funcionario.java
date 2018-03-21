@@ -60,6 +60,12 @@ class Funcionario {
             else
                 return salario * 0.85;
         }
+        if(cargo == "TESTADOR") {
+            if(salario >= 2000)
+                return salario * 0.75;
+            else
+                return salario * 0.85;
+        }
         return 0;
     }
     
