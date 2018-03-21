@@ -25,6 +25,9 @@ public class CalcSalario {
             throw new IllegalArgumentException("Você não pode ficar sem cargo na empresa");
         if(asa.email == "")
             throw new IllegalArgumentException("Você precisa de um e-mail para trabalhar");
+        if(asa.cargo != "GERENTE" && asa.cargo != "DESENVOLVEDOR" && asa.cargo != "TESTADOR" && asa.cargo != "DBA")
+            throw new IllegalArgumentException("Cargo inexistente na empresa, procure o RH para sua demissão.");
+        
         if(asa.cargo == "DESENVOLVEDOR") {
             if(asa.salario >= 3000)    
                 return asa.salario * 0.8;
@@ -49,6 +52,7 @@ public class CalcSalario {
             else
                 return asa.salario * 0.80;
         }
+
         return 0;
     }
 }

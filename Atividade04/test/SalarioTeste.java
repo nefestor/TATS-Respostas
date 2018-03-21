@@ -71,5 +71,10 @@ public class SalarioTeste {
         CalcSalario calculo = new CalcSalario(new Funcionario("Tiago", "", 3000.0, "TESTADOR"));
         calculo.calcSalario();
     }
+    @Test(expected = IllegalArgumentException.class)
+    public void cargoInexistente() {
+        CalcSalario calculo = new CalcSalario(new Funcionario("Tiago", "tiago@email.com", 3000.0, "GERENTE DE PROJETOS"));
+        calculo.calcSalario();
+    }
     
 }
