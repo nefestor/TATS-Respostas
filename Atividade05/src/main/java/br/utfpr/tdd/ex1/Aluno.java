@@ -1,5 +1,7 @@
 package br.utfpr.tdd.ex1;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,11 +44,20 @@ public class Aluno {
     }
 
     double getNF() {
-        if(notaRAA < 0)
-            return ((notaProjeto + getNAP()) / 2.0);
-	if((notaProjeto + getNAP() + notaRAA) / 3.0 > 6)
-	    return 6;
-        return ((notaProjeto + getNAP() + notaRAA) / 3.0);
+        
+        double notaFinal = 0;
+        if(notaRAA < 0) {
+            notaFinal = ((notaProjeto + getNAP()) / 2.0);
+            BigDecimal bd = new BigDecimal(notaFinal).setScale(1, RoundingMode.HALF_EVEN);
+            return bd.doubleValue();
+        }
+        
+        notaFinal =  (notaProjeto + getNAP() + notaRAA) / 3.0;
+        BigDecimal bd = new BigDecimal(notaFinal).setScale(1, RoundingMode.HALF_EVEN);
+	if(bd.doubleValue() >= 6.0) {
+            return 6.0;
+        }
+        return bd.doubleValue();
     }
 
     void setNotaRAA(double nota) {

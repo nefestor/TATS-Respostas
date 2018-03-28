@@ -100,7 +100,6 @@ public class AlunoTest {
 
         aluno.setNotaProjeto(5.0);
         aluno.setNotaRAA(8.28);
-
         assertEquals(6.0, aluno.getNF(), 0.01);
     }
 }
